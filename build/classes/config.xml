@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<demo-config>
+	<bean id="viewResolver">
+		<prefix>/demo/</prefix>
+		<suffix>.jsp</suffix>
+		<innerPrefix>/WEB-INF/</innerPrefix>
+	</bean>
+	<page path="type_add">
+		<valueObject id="addInfo" class="com.Haige.Myblog.VO.VO4TypeAdd"/>
+		<action actionPath="addType" class="com.Haige.Myblog.Action.BlogAction" method="addBlogType"/>
+	</page>
+	<page path="type_edit">
+		<valueObject id="editInfo" class="com.Haige.Myblog.VO.VO4TypeEdit"/>
+		<action actionPath="editType" class="com.Haige.Myblog.Action.BlogAction" method="editBlogType"/>
+	</page>
+	<page path="blog_type_list">
+		<action actionPath="delMember" class="com.auko.demo.action.MemberAction" method="del"/>
+		<action actionPath="getBlogType" class="com.Haige.Myblog.Action.BlogAction" method="getAllBlogType" resource="typeList"/>
+	</page>
+	<page path="blog">
+		<init Initpath="blog" class="com.Haige.Myblog.Action.BlogAction" method="getAllBlogType" resource ="BlogTypeList"/>
+	</page>
+</demo-config>
